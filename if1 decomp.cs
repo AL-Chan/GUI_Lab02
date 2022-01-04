@@ -41,7 +41,7 @@ namespace FirstApp
 			}
             
             		//
-            		Result:
+			Result:
 			var Ssq = a * a; // формула площади квадрата
 			var Sci = 3.14 * (r * r); // формула площади круга
 
