@@ -53,8 +53,8 @@ namespace FirstApp
 
 		public static double AreaCircle(int r)
 		{
-            double s = 3.14 * (r * r);
-            var Sci = s; // формула площади круга
+            		double s = 3.14 * (r * r);
+            		var Sci = s; // формула площади круга
 			return Sci;
 		}
 
