@@ -1,4 +1,4 @@
-﻿
+
 namespace Lab2Part01Var1_1
 {
     partial class Lab1_Var1
@@ -106,7 +106,7 @@ namespace Lab2Part01Var1_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 151);
+            this.ClientSize = new System.Drawing.Size(406, 156);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.picCircle);
             this.Controls.Add(this.picSquare);
@@ -135,4 +135,3 @@ namespace Lab2Part01Var1_1
         private System.Windows.Forms.Button button1;
     }
 }
-
