@@ -7,8 +7,20 @@ namespace FirstApp
 		{
 			string outMessage0r = "";
 			string outMessage0a = "";
+			
+			if (r <= 0 && a <= 0) // для двух отрицательных значений
+			{
+				outMessage0r = ("Некорректное значение " + r + " для радиуса круга. Повторите попытку.");
+				Console.WriteLine(outMessage0r);
+				outMessage0a = ("Некорректное значение " + a + " для стороны квадрата. Повторите попытку.");
+				Console.WriteLine(outMessage0a);
+				Environment.Exit(0);
+			}
+			else
+			{
+			}
 
-			if (r <= 0)
+			if (r <= 0) // для отрицательного радиуса
 			{
 				outMessage0r = ("Некорректное значение " + r + " для радиуса круга. Введите заново.");
 				Console.WriteLine(outMessage0r);
@@ -18,7 +30,7 @@ namespace FirstApp
 			{
 			}
 
-			if (a <= 0)
+			if (a <= 0) // для двух отрицательной стороны
 			{
 				outMessage0a = ("Некорректное значение " + a + " для стороны квадрата. Введите заново.");
 				Console.WriteLine(outMessage0a);
