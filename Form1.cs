@@ -19,25 +19,14 @@ namespace Lab2Part01Var1_1
 
         private void button1_Click(object sender, EventArgs e)
         {
-			/*
-			// I
-			int r = int.Parse(Console.ReadLine()); //чтение значения радиуса круга
-			int a = int.Parse(Console.ReadLine()); //чтение значения стороны квадрата
-			*/
+		var r = int.Parse(this.textRadiusofCircle.Text);
+		var a = int.Parse(this.textSideofSquare.Text);
+		var outMessage0r = Logic.NonNegativity(r, a);
+		var Sci = Logic.AreaCircle(r);
+		var Ssq = Logic.AreaSquare(a);
+		var outMessage1 = Logic.Compare(Ssq, Sci);
 
-			// II начло Logic
-			var r = int.Parse(this.textRadiusofCircle.Text);
-			var a = int.Parse(this.textSideofSquare.Text);
-			var outMessage0r = Logic.NonNegativity(r, a);
-			var Sci = Logic.AreaCircle(r);
-			var Ssq = Logic.AreaSquare(a);
-			var outMessage1 = Logic.Compare(Ssq, Sci);
-
-			/// III 
-			//Console.WriteLine(outMessage1);
-			//Console.ReadLine();
-
-			MessageBox.Show(outMessage1);
+		MessageBox.Show(outMessage1);
         }
     }
 
