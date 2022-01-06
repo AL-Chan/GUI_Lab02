@@ -10,67 +10,55 @@ using System.Windows.Forms;
 
 namespace Lab2Part01Var1_1
 {
-    public partial class Lab1_Var1 : Form
-    {
-        public Lab1_Var1()
-        {
-            InitializeComponent();
-        }
+	public partial class Lab1_Var1 : Form
+	{
+		public Lab1_Var1()
+		{
+			InitializeComponent();
+		}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-		var r = int.Parse(this.textRadiusofCircle.Text);
-		var a = int.Parse(this.textSideofSquare.Text);
-		var outMessage0r = Logic.NonNegativity(r, a);
-		var Sci = Logic.AreaCircle(r);
-		var Ssq = Logic.AreaSquare(a);
-		var outMessage1 = Logic.Compare(Ssq, Sci);
+		private void button1_Click(object sender, EventArgs e)
+		{
+			var r = int.Parse(this.textRadiusofCircle.Text);
+			var a = int.Parse(this.textSideofSquare.Text);
+			var outMessage0 = Logic.NonNegativity(r, a);
+			
+			var Sci = Logic.AreaCircle(r);
+			var Ssq = Logic.AreaSquare(a);
+			var outMessage1 = Logic.Compare(Ssq, Sci);
 
-		MessageBox.Show(outMessage1);
-        }
-    }
+			if (r <= 0 || a <= 0)
+            		{
+				MessageBox.Show(outMessage0);
+			}
+        		else
+            		{
+				MessageBox.Show(outMessage1);
+			}
+		}
+	}
 
 	public class Logic
 	{
 		public static string NonNegativity(int r, int a) //проверка на неотрицательность значений
 		{
-			string outMessage0r = "";
-			string outMessage0a = "";
-
+			string outMessage0 = "";
 			if (r <= 0 && a <= 0)
 			{
-				outMessage0r = ("Некорректное значение " + r + " для радиуса круга. Повторите попытку.");
-				Console.WriteLine(outMessage0r);
-				outMessage0a = ("Некорректное значение " + a + " для стороны квадрата. Повторите попытку.");
-				Console.WriteLine(outMessage0a);
-				Environment.Exit(0);
+				outMessage0 = ("Некорректное значение " + r + " для радиуса круга.\nНекорректное значение " + a + " для стороны квадрата.\nПовторите попытку.");
+			}
+			else if (r <= 0)
+			{
+				outMessage0 = ("Некорректное значение " + r + " для радиуса круга.\nПовторите попытку.");
+			}
+			else if (a <= 0)
+			{
+				outMessage0 = ("Некорректное значение " + a + " для стороны квадрата.\nПовторите попытку.");
 			}
 			else
 			{
 			}
-
-			if (r <= 0)
-			{
-				outMessage0r = ("Некорректное значение " + r + " для радиуса круга. Повторите попытку.");
-				Console.WriteLine(outMessage0r);
-				Environment.Exit(0);
-			}
-			else
-			{
-			}
-
-			if (a <= 0)
-			{
-				outMessage0a = ("Некорректное значение " + a + " для стороны квадрата. Повторите попытку.");
-				Console.WriteLine(outMessage0a);
-				Environment.Exit(0);
-
-			}
-			else
-			{
-			}
-
-			return outMessage0r;
+			return outMessage0;
 		}
 
 		public static int AreaSquare(int a)
