@@ -19,8 +19,19 @@ namespace Lab2Part01Var1_1
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			var r = int.Parse(this.textRadiusofCircle.Text);
-			var a = int.Parse(this.textSideofSquare.Text);
+			//var r = int.Parse(this.textRadiusofCircle.Text);
+			//var a = int.Parse(this.textSideofSquare.Text);
+			int r, a;
+			try
+			{
+				r = int.Parse(this.textRadiusofCircle.Text);
+				a = int.Parse(this.textSideofSquare.Text);
+			}
+            		catch(FormatException)
+           		{
+				MessageBox.Show("Некорректно введённые значения\nПовторите попытку.", "Ошибка", MessageBoxButtons.OK);
+				return;
+            		}
 			var outMessage0 = Logic.NonNegativity(r, a);
 			
 			var Sci = Logic.AreaCircle(r);
@@ -84,7 +95,7 @@ namespace Lab2Part01Var1_1
 			}
 			else
 			{
-				outMessage1 = (Ssq + " > " + Sci + "\nПлощадь квадрата больше площади круга.");
+				outMessage1 = (Sci + " < " + Ssq + "\nПлощадь квадрата больше площади круга.");
 			}
 			return outMessage1;
 		}
