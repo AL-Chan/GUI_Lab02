@@ -15,7 +15,7 @@ namespace Lab2Part01Var1_1
 		public Lab1_Var1()
 		{
 			InitializeComponent();
-			// Считывание значений из настройек
+			//считывание значений из настройек
 			textRadiusofCircle.Text = Properties.Settings.Default.textRadiusofCircle.ToString();
 			textSideofSquare.Text = Properties.Settings.Default.textSideofSquare.ToString();
 		}
@@ -34,26 +34,25 @@ namespace Lab2Part01Var1_1
 				Properties.Settings.Default.textRadiusofCircle = r;
 				Properties.Settings.Default.textSideofSquare = a;
 				Properties.Settings.Default.Save();
-				// сохраняем переданные значения, чтобы они восстановились пре очередном запуске
+				//сохраняем переданные значения, чтобы они восстановились пре очередном запуске
 			}
-            catch(FormatException)
-            {
+            		catch(FormatException)
+           		{
 				MessageBox.Show("Некорректно введённые значения\nПовторите попытку.", "Ошибка", MessageBoxButtons.OK);
 				return;
-            }
-
+           		}
 
 			var outMessage0 = Logic.NonNegativity(r, a);
 			var Sci = Logic.AreaCircle(r);
 			var Ssq = Logic.AreaSquare(a);
 			var outMessage1 = Logic.Compare(Ssq, Sci);
 
-		if (r <= 0 || a <= 0)
-            {
+			if (r <= 0 || a <= 0)
+            		{
 				MessageBox.Show(outMessage0);
 			}
-        else
-            {
+       			else
+            		{
 				MessageBox.Show(outMessage1);
 			}
 		}
