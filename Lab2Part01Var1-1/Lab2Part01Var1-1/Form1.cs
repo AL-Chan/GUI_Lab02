@@ -15,18 +15,26 @@ namespace Lab2Part01Var1_1
 		public Lab1_Var1()
 		{
 			InitializeComponent();
+			// Считывание значений из настройек
+			textRadiusofCircle.Text = Properties.Settings.Default.textRadiusofCircle.ToString();
+			textSideofSquare.Text = Properties.Settings.Default.textSideofSquare.ToString();
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
 			//var r = int.Parse(this.textRadiusofCircle.Text);
 			//var a = int.Parse(this.textSideofSquare.Text);
-
 			int r, a;
-			try
+			
+			
+			try //проверка на вхождение значений в int
 			{
-			r = int.Parse(this.textRadiusofCircle.Text);
-			a = int.Parse(this.textSideofSquare.Text);
+				r = int.Parse(this.textRadiusofCircle.Text);
+				a = int.Parse(this.textSideofSquare.Text);
+				Properties.Settings.Default.textRadiusofCircle = r;
+				Properties.Settings.Default.textSideofSquare = a;
+				Properties.Settings.Default.Save();
+				// сохраняем переданные значения, чтобы они восстановились пре очередном запуске
 			}
             catch(FormatException)
             {
